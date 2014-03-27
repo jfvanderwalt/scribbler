@@ -4,7 +4,6 @@ window.Scribbler =
   Views: {}
   Routers: {}
   initialize: ->
-    alert('Hello from Backbone!')
 
 window.App = window.Scribbler
 
