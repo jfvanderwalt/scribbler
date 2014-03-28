@@ -4,7 +4,10 @@ class App.Routers.ScribblerRouter extends Backbone.Router
     'notes/:id': 'showNote'
 
   index: ->
-    alert('You have requested the index page.')
+    view = new App.Views.Notes(collection: App.AllNotes)
+    $('#container').html(view.render().el)
 
-  showNote: (id) -> 
-    alert('You requested the show page.')
+  showNote: (id) ->
+    model = App.AllNotes[id - 1]
+    view = new App.Views.EditNote(model: model)
+    $('#container').html(view.render().el)
